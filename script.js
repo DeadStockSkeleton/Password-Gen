@@ -63,19 +63,18 @@ var btn = document.getElementById("generate");
 //When button is clicked
 btn.addEventListener("click", function () {
   var textArea = document.getElementById("password");
-  var pref1 = prompt("Would you like numbers? (y/n)");
-  var pref2 = prompt("Would you like special character? (y/n)");
+  var pref1 = prompt("Would you like numbers? (y/n) *case sensitive*");
+  var pref2 = prompt("Would you like special character? (y/n) *case sensitive*");
   var pref3 = prompt(
     "How long do you want you password? (Must be at least 8 - 128 characters)"
   );
   //Clear text area
   textArea.value = "";
   pref3 = parseInt(pref3);
-
   //If userInput is great than or equal to 8 and less than or equal to 128,
   if (pref3 >= 8 && pref3 <= 128) {
     //If user inputs 'y' for number and special options
-    if (pref1 == "y" && pref2 == "y") {
+    if (pref1 == "y" && pref2 == "y" ) {
       //combine all arrays
       var opt1 = alpha.concat(num, special);
       var x = "";
