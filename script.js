@@ -63,8 +63,8 @@ var btn = document.getElementById("generate");
 //When button is clicked
 btn.addEventListener("click", function () {
   var textArea = document.getElementById("password");
-  var pref1 = prompt("Would you like numbers? (y/n) *case sensitive*");
-  var pref2 = prompt("Would you like special character? (y/n) *case sensitive*");
+  var pref1 = prompt("Would you like numbers? (y/n)");
+  var pref2 = prompt("Would you like special character? (y/n)");
   var pref3 = prompt(
     "How long do you want you password? (Must be at least 8 - 128 characters)"
   );
@@ -74,7 +74,7 @@ btn.addEventListener("click", function () {
   //If userInput is great than or equal to 8 and less than or equal to 128,
   if (pref3 >= 8 && pref3 <= 128) {
     //If user inputs 'y' for number and special options
-    if (pref1 == "y" && pref2 == "y" ) {
+    if (pref1.toLowerCase() == "y" && pref2.toLowerCase() == "y" ) {
       //combine all arrays
       var opt1 = alpha.concat(num, special);
       var x = "";
@@ -94,7 +94,7 @@ btn.addEventListener("click", function () {
       //copy text
       document.execCommand("copy");
       //If user inputs 'n' for number and special options
-    } else if (pref1 == "n" && pref2 == "n") {
+    } else if (pref1.toLowerCase() == "n" && pref2.toLowerCase() == "n") {
       var y = "";
       for (var i = 0; i < pref3; i++) {
         var password = alpha[Math.floor(Math.random() * alpha.length)];
@@ -106,7 +106,7 @@ btn.addEventListener("click", function () {
       textArea.select();
       document.execCommand("copy");
       //If user inputs 'y' for number option and 'n' for special option
-    } else if (pref1 == "y" && pref2 == "n") {
+    } else if (pref1.toLowerCase() == "y" && pref2.toLowerCase() == "n") {
       var opt2 = alpha.concat(num);
       var z = "";
       for (var i = 0; i < pref3; i++) {
@@ -118,7 +118,7 @@ btn.addEventListener("click", function () {
       textArea.select();
       document.execCommand("copy");
       //If user inputs 'n' for number option and 'y' for special option
-    } else if (pref1 == "n" && pref2 == "y") {
+    } else if (pref1.toLowerCase() == "n" && pref2.toLowerCase() == "y") {
       var opt3 = alpha.concat(special);
       var a = "";
       for (var i = 0; i < pref3; i++) {
